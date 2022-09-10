@@ -10,7 +10,6 @@ export const FriendsListContainer = styled.div`
 export const Friends = styled.ul`
   padding: 0;
   margin: 0;
-
   list-style: none;
 `;
 export const FriendsItem = styled.li`
@@ -22,7 +21,7 @@ export const FriendsItem = styled.li`
 
   box-shadow: ${props => props.theme.shadows.boxShadow.normalInvert};
   &:not(:last-child) {
-    margin-bottom: ${props => props.theme.spacing(4)};
+    margin-bottom: ${props => props.theme.spacing(3)};
   }
 `;
 export const FriendsAvatar = styled.img`
