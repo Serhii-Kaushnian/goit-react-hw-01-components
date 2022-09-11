@@ -7,10 +7,10 @@ import {
   StatisticsInfoPercentage,
   StatisticsInfoLabel,
 } from './Statistics.styled';
-export const Statistics = ({ data }) => {
+export const Statistics = ({ data, title }) => {
   return (
     <StatisticsContainer>
-      <StatisticsTitle>Upload stats</StatisticsTitle>
+      {title && <StatisticsTitle>{title}</StatisticsTitle>}
       <StatisticsList>
         {data.map(({ id, label, percentage }) => (
           <StatisticsListItem key={id}>
@@ -22,8 +22,13 @@ export const Statistics = ({ data }) => {
     </StatisticsContainer>
   );
 };
+
 Statistics.propTypes = {
-  id: PropTypes.string,
-  label: PropTypes.string,
-  percentage: PropTypes.number,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
 };

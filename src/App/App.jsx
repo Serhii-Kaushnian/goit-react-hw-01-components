@@ -9,10 +9,11 @@ import friends from '../components/FriendList/friends.json';
 import transactions from '../components/TransactionHistory/transactions.json';
 
 export const App = function App() {
+  const { avatar, username, tag, location, stats } = user;
   return (
     <Container>
-      <Profile user={user} />
-      <Statistics data={data} />
+      <Profile username={username} avatar={avatar} tag={tag} location={location} stats={stats} />
+      <Statistics data={data} title="Upload stats" />
       <FriendsList friends={friends} />
       <TransactionHistory transactions={transactions} />
     </Container>
